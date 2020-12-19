@@ -12,6 +12,10 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { HttpClientModule } from "@angular/common/http";
+import { CategoryListComponent } from './components/category-list/category-list.component';
+import { CategoryAddComponent } from './components/category-add/category-add.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +25,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     Page404Component,
     SidebarComponent,
-    TopbarComponent
+    TopbarComponent,
+    CategoryListComponent,
+    CategoryAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
