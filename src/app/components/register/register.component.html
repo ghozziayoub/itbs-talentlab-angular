@@ -23,21 +23,33 @@
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control form-control-user" id="exampleLastName"
                                             placeholder="Last Name" formControlName="lastname">
+                                        <small
+                                            *ngIf="registerForm.get('lastname')?.touched && registerForm.get('lastname')?.invalid"
+                                            class="text-danger">lastname is required</small>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="Email Address" formControlName="email">
+                                    <small
+                                        *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid"
+                                        class="text-danger">email is required</small>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
                                             id="exampleInputPassword" placeholder="Password" formControlName="password">
+                                        <small
+                                            *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid"
+                                            class="text-danger">password is required</small>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
                                             id="exampleRepeatPassword" placeholder="Repeat Password"
                                             formControlName="repassword">
+                                        <small
+                                            *ngIf="registerForm.get('repassword')?.touched && registerForm.get('repassword')?.invalid"
+                                            class="text-danger">repassword is required</small>
                                     </div>
                                 </div>
                                 <button type="submit" [disabled]="registerForm.invalid"

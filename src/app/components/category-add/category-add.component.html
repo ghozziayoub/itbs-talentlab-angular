@@ -40,6 +40,9 @@
                                         <div class="form-group">
                                             <label for="nom">Nom : </label>
                                             <input formControlName="name" type="text" id="nom" class="form-control">
+                                            <small
+                                                *ngIf="addCategoryForm.get('name')?.touched && addCategoryForm.get('name')?.invalid"
+                                                class="text-danger">name is required</small>
                                         </div>
 
                                         <div class="form-group">
