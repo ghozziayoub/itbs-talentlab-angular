@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   public categoriesList: any[] = []
+  public productsList: any[] = []
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +17,14 @@ export class HomeComponent implements OnInit {
     this.http.get<any>("https://itbs-backend.herokuapp.com/category/all").subscribe(
       result => {
         this.categoriesList = result
+      },
+      error => {
+        console.log(error);
+      }
+    )
+    this.http.get<any>("https://itbs-backend.herokuapp.com/product/all").subscribe(
+      result => {
+        this.productsList = result
       },
       error => {
         console.log(error);
