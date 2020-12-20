@@ -1,0 +1,109 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Gestion des produits</h1>
+                </div>
+
+                <!-- Content Row -->
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Ajouter produit</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <form [formGroup]="addProductForm" (ngSubmit)="addProduct()">
+                                    <div class="form-group">
+                                        <label for="nom">Nom : </label>
+                                        <input formControlName="name" type="text" id="nom" class="form-control">
+                                        <small
+                                            *ngIf="addProductForm.get('name')?.touched && addProductForm.get('name')?.invalid"
+                                            class="text-danger">name is required</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nom">Image : </label>
+                                        <input formControlName="imageUrl" type="text" id="nom" class="form-control">
+                                        <small
+                                            *ngIf="addProductForm.get('imageUrl')?.touched && addProductForm.get('imageUrl')?.invalid"
+                                            class="text-danger">imageUrl is required</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nom">Prix : </label>
+                                        <input formControlName="price" type="text" id="nom" class="form-control">
+                                        <small
+                                            *ngIf="addProductForm.get('price')?.touched && addProductForm.get('price')?.invalid"
+                                            class="text-danger">price is required</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nom">Description : </label>
+                                        <input formControlName="description" type="text" id="nom" class="form-control">
+                                        <small
+                                            *ngIf="addProductForm.get('description')?.touched && addProductForm.get('description')?.invalid"
+                                            class="text-danger">description is required</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nom">Categorie : </label>
+                                        <select formControlName="category_id" class="form-control">
+                                            <option *ngFor="let category of categoriesList" [value]="category._id">
+                                                {{category.name}}
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->

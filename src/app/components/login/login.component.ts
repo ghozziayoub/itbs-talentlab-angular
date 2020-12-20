@@ -31,6 +31,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let token = localStorage.getItem("mytoken")
+
+    if (token) {
+      this.router.navigateByUrl("/dashboard")
+    }
   }
 
   public loginUser(): void {
@@ -40,6 +45,8 @@ export class LoginComponent implements OnInit {
     this.http.post<any>("https://itbs-backend.herokuapp.com/user/login", data)
       .subscribe(
         result => {
+          let token = result.token
+          localStorage.setItem("mytoken", token)
           this.router.navigateByUrl('/dashboard')
         },
 

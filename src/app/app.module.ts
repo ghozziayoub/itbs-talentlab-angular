@@ -14,7 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from "@angular/common/http";
 import { CategoryListComponent } from './components/category-list/category-list.component';
-import { CategoryAddComponent } from './components/category-add/category-add.component'
+import { CategoryAddComponent } from './components/category-add/category-add.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductAddComponent } from './components/product-add/product-add.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { CategoryAddComponent } from './components/category-add/category-add.com
     SidebarComponent,
     TopbarComponent,
     CategoryListComponent,
-    CategoryAddComponent
+    CategoryAddComponent,
+    ProductListComponent,
+    ProductAddComponent
   ],
   imports: [
     BrowserModule,

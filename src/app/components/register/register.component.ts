@@ -38,6 +38,12 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let token = localStorage.getItem("mytoken")
+
+    if (token != null) {
+      this.router.navigateByUrl("/dashboard")
+    }
+    
   }
 
   public registerUser(): void {

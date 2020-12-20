@@ -6,7 +6,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { Page404Component } from './components/page404/page404.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -24,15 +27,28 @@ const routes: Routes = [
   },
   {
     path: "dashboard",
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "category-list",
-    component: CategoryListComponent
+    component: CategoryListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "category-add",
-    component: CategoryAddComponent
+    component: CategoryAddComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "product-list",
+    component: ProductListComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "product-add",
+    component: ProductAddComponent,
+    canActivate: [AuthGuard]
   },
 
 
